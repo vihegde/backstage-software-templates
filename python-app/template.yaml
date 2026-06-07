@@ -47,7 +47,7 @@ spec:
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?owner=vihegde&repo=${{parameters.component_id}}
         protectDefaultBranch: false
-        repoVisibility: public
+        #repoVisibility: public
 
     - id: register
       name: Register
