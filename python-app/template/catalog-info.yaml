@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.app_name}}
-  description: Python app displays the time, Names ${{values.app_name}}
+  name: python-app
+  description: This displays time.
   # Example for optional annotations
   annotations:
-      github.com/project-slug: vihegde/${{values.app_name}}
+      github.com/project-slug: vihegde/python-app
       backstage.io/techdocs-ref: dir:.
   #   backstage.io/techdocs-ref: dir:.
 spec:
