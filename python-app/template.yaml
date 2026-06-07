@@ -27,6 +27,11 @@ spec:
             - dev
             - qa
             - prod
+        repoUrl:
+          ui:options:
+            allowedHosts:
+            - github.com
+
 
   steps:
     - id: fetch-base
@@ -42,12 +47,12 @@ spec:
       name: Publish
       action: publish:github
       input:
-        allowedHosts:
-          - github.com
+#        allowedHosts:
+#          - github.com
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?owner=vihegde&repo=${{parameters.component_id}}
         protectDefaultBranch: false
-        #repoVisibility: public
+        repoVisibility: public
 
     - id: register
       name: Register
