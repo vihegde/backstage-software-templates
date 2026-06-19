@@ -25,7 +25,6 @@ spec:
           description: The environment where this component will be deployed
           enum:
             - dev
-            - qa
             - prod
         repoUrl:
           ui:options:
