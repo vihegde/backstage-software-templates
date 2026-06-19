@@ -46,7 +46,7 @@ jobs:
       - name: "Modify values fullnameOverride"
         shell: bash
         run:
-           echo ${{ '${{needs.ci.outputs.commit_id}}' }} &&  python3 -m venv .venv && source .venv/bin/activate && pip install yq && yq -Yi '.image.tag = "${{ '${{needs.ci.outputs.commit_id}}' }}" ' charts/${{values.app_name}}/${{values.app_env}}'.yaml
+           echo ${{ '${{needs.ci.outputs.commit_id}}' }} &&  python3 -m venv .venv && source .venv/bin/activate && pip install yq && yq -Yi '.image.tag = "${{ '${{needs.ci.outputs.commit_id}}' }}" ' charts/${{values.app_name}}/values-${{values.app_env}}.yaml
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
@@ -60,4 +60,4 @@ jobs:
       - name: Argocd app sync
         shell: bash
         run:
-           argocd login argocd-server.argocd --insecure --username admin --password ${{ '${{secrets.ARGOCD_PASSWORD}}' }} --grpc-web && argocd app sync ${{values.app_name}}
+           argocd login argocd-server.argocd --insecure --username admin --password ${{ '${{secrets.ARGOCD_PASSWORD}}' }} --grpc-web && argocd app sync ${{ '${{values.app_name}}' }}
