@@ -60,4 +60,4 @@ jobs:
       - name: Argocd app sync
         shell: bash
         run:
-           argocd login argocd-server.argocd --insecure --username admin --password ${{ '${{secrets.ARGOCD_PASSWORD}}' }} --grpc-web && argocd app sync ${{ '${{values.app_name}}' }}
+           argocd login argocd-server.argocd --grpc-web --insecure --username admin --password ${{ '${{secrets.ARGOCD_PASSWORD}}' }} && argocd app sync ${{values.app_name}}
