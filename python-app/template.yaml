@@ -29,7 +29,7 @@ spec:
         repoUrl:
           ui:options:
             allowedHosts:
-            - github.com
+               - github.com
 
 
   steps:
