@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ricardoandre9707/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }}
+          tags: vihegde23021985/${{values.app_name}}:${{ '${{ env.COMMIT_ID }}' }}
     outputs:
       commit_id: ${{ '${{ env.COMMIT_ID }}' }}
 
@@ -48,7 +48,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          message: 'Updates values.yaml with commit ${{ '${{needs.ci.outputs.commit_id}}' }} '
+          message: 'Updates the values commit ID to tags ${{ "${{needs.ci.outputs.commit_id}}" }}'
 
       - name: Install argocd
         shell: bash
