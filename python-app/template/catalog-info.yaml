@@ -5,7 +5,7 @@ metadata:
   description: This displays time. Named ${{values.app_name}}
   # Example for optional annotations
   annotations:
-      github.com/project-slug: vihegde/${{values.app_name}}
+      github.com/project-slug: vihegde85/${{values.app_name}}
       backstage.io/techdocs-ref: dir:.
   #   backstage.io/techdocs-ref: dir:.
 spec:
